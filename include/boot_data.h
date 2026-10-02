@@ -6,7 +6,7 @@ typedef struct __attribute__((packed)) {
 
     // Boot logo
     const struct __attribute__((packed)) {
-        uint8_t * const image;
+        const uint8_t* image;
         uint32_t image_length;
         uint32_t format;
         uint16_t width;
@@ -15,7 +15,7 @@ typedef struct __attribute__((packed)) {
 
     // LCD initialization commands
     const struct __attribute__((packed)) {
-        uint8_t * const commands;
+        const uint8_t* commands;
         uint32_t commands_length;
     } display_init_commands;
 } boot_data_t;
