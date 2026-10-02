@@ -1,8 +1,8 @@
 #include <stdint.h>
 
 typedef struct __attribute__((packed)) {
-    const char hardware_id[10] __attribute__((nonstring));
-    const char app_version[10] __attribute__((nonstring));
+    char hardware_id[10] __attribute__((nonstring));
+    char app_version[10] __attribute__((nonstring));
 } app_metadata_t;
 
 #define HARDWARE_ID_SIZE (sizeof(((app_metadata_t*)0)->hardware_id))
