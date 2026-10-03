@@ -12,6 +12,16 @@ EEPROM_SIZE          := 1024
 # Reserved space for metadata (HW ID, CRC)
 APP_METADATA_SIZE    := 24
 
+################################################################################
+# Flash layout:                                                                #
+#     [BOOTLOADER]                                                             #
+#     [BOOTLOADER_DATA]                                                        #
+#     [APP]                                                                    #
+#     [APP_METADATA]                                                           #
+#     [APP_CRC]                                                                #
+#     [EEPROM]                                                                 #
+################################################################################
+
 
 # MDO-1A UF2 family ID
 UF2_FAMILY           := 0xCA8A701A
