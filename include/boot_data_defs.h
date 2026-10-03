@@ -23,3 +23,5 @@ typedef struct __attribute__((packed)) {
     boot_logo_t boot_logo;
     display_init_commands_t display_init_commands;
 } boot_data_t;
+
+const boot_data_t* const g_boot_data = (boot_data_t* const)(FLASH_BASE + (BOOTLOADER_SIZE - BOOTLOADER_DATA_SIZE));
