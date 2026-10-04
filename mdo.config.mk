@@ -14,18 +14,16 @@ APP_METADATA_SIZE    := 24
 
 ################################################################################
 # Flash layout:                                                                #
-#     [BOOTLOADER]                                                             #
-#     [BOOTLOADER_DATA]                                                        #
+#     [BOOTLOADER + BOOTLOADER_DATA]                                           #
 #     [APP]                                                                    #
-#     [APP_METADATA]                                                           #
-#     [APP_CRC]                                                                #
+#     [APP_METADATA + APP_CRC]                                                 #
 #     [EEPROM]                                                                 #
 ################################################################################
 
 
 # MDO-1A UF2 family ID
 UF2_FAMILY           := 0xCA8A701A
-# Hardware ID for firmware compatibility check
+# Hardware ID for firmware compatibility check; max 10 characters
 BOARD_HWID           := MDO-1A*001
 # Device firmware download link
 FIRMWARE_URL         := https://github.com/ESS-1/gpsdo-fw-mdo-1a
