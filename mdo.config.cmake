@@ -1,5 +1,5 @@
 # Load and parse shared build constants from 'mdo.config.mk'
-set(CONFIG_MK_FILE "${CMAKE_CURRENT_SOURCE_DIR}/mdo.config.mk")
+set(CONFIG_MK_FILE "${CMAKE_CURRENT_LIST_DIR}/mdo.config.mk")
 
 # Check if configuration file exists
 if(NOT EXISTS "${CONFIG_MK_FILE}")
@@ -10,12 +10,12 @@ file(STRINGS "${CONFIG_MK_FILE}" CONFIG_MK_LINES)
 
 foreach(line IN LISTS CONFIG_MK_LINES)
     # Skip empty lines and full-line comments
-    if(line MATCHES "^\\s*#" OR line MATCHES "^\\s*$")
+    if(line MATCHES "^[ \t]*#" OR line MATCHES "^[ \t]*$")
         continue()
     endif()
 
     # Parse KEY = VALUE or KEY := VALUE
-    if(NOT line MATCHES "^\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*:?=\\s*(.*)$")
+    if(NOT line MATCHES "^[ \t]*([A-Za-z_][A-Za-z0-9_]*)[ \t]*:?=[ \t]*(.*)$")
         message(FATAL_ERROR "Unsupported syntax in ${CONFIG_MK_FILE}: '${line}'")
     endif()
 
