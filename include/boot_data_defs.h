@@ -13,17 +13,25 @@ typedef struct {
 
 // LCD initialization commands
 typedef struct {
-    const uint8_t* commands;
-    uint32_t       commands_length;
-} display_init_commands_t;
+    const uint8_t* init_commands;
+    uint32_t       init_commands_length;
+
+    uint16_t       vcom_min;
+    uint16_t       vcom_max;
+    uint16_t       vcom_default;
+    int16_t        vcom_base_mv;
+    int16_t        vcom_step_mv;
+
+    uint16_t       reserved_1;
+} display_config_t;
 
 // Boot data
 typedef struct {
-    char                    bootloader_version[12];
-    boot_logo_t             boot_logo;
-    display_init_commands_t display_init_commands;
+    char             bootloader_version[12];
+    boot_logo_t      boot_logo;
+    display_config_t display_config;
 } boot_data_t;
 
-_Static_assert(sizeof(boot_data_t) == 36, "boot_data_t size mismatch");
+_Static_assert(sizeof(boot_data_t) == 48, "boot_data_t size mismatch");
 
 #define G_BOOT_DATA ((const volatile boot_data_t*)(FLASH_BASE + BOOTLOADER_SIZE - BOOTLOADER_DATA_SIZE))
