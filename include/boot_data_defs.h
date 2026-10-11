@@ -18,11 +18,10 @@ typedef struct {
 
     uint16_t       vcom_min;
     uint16_t       vcom_max;
+    uint16_t       vcom_adjust_step;
     uint16_t       vcom_default;
-    int16_t        vcom_base_mv;
+    int16_t        vcom_offset_mv;
     int16_t        vcom_step_mv;
-
-    uint16_t       reserved_1;
 } display_config_t;
 
 // Boot data
