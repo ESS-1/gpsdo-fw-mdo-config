@@ -26,7 +26,7 @@ typedef struct {
 
 // Boot data
 typedef struct {
-    char             bootloader_version[12];
+    char             bootloader_version[12]; // Null-terminated
     boot_logo_t      boot_logo;
     display_config_t display_config;
 } boot_data_t;
