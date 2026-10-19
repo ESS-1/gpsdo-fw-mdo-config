@@ -11,6 +11,18 @@ typedef struct {
     uint16_t       height;
 } boot_logo_t;
 
+// Barcode
+typedef struct {
+    const uint8_t* data;
+    uint32_t       data_length;
+    uint16_t       width;
+    uint16_t       height;
+    uint16_t       scale_x;
+    uint16_t       scale_y;
+    uint16_t       bar_color;
+    uint16_t       bg_color;
+} barcode_t;
+
 // LCD initialization commands
 typedef struct {
     const uint8_t* init_commands;
@@ -27,10 +39,11 @@ typedef struct {
 // Boot data
 typedef struct {
     char             bootloader_version[12]; // Null-terminated
-    boot_logo_t      boot_logo;
     display_config_t display_config;
+    boot_logo_t      boot_logo;
+    barcode_t        app_update_url;
 } boot_data_t;
 
-_Static_assert(sizeof(boot_data_t) == 48, "boot_data_t size mismatch");
+_Static_assert(sizeof(boot_data_t) == 68, "boot_data_t size mismatch");
 
 #define G_BOOT_DATA ((const volatile boot_data_t*)(FLASH_BASE + BOOTLOADER_SIZE - BOOTLOADER_DATA_SIZE))

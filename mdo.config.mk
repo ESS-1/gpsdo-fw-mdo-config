@@ -27,4 +27,4 @@ UF2_FAMILY           := 0xCA8A701A
 BOARD_MODEL          := MDO-1A
 BOARD_HWID           := MDO-1A*001
 # Device firmware download link
-FIRMWARE_URL         := https://github.com/ESS-1/gpsdo-fw-mdo-1a
+FIRMWARE_URL         := https://github.com/ESS-1/gpsdo-fw-mdo-1a/releases
