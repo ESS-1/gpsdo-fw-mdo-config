@@ -17,8 +17,6 @@ typedef struct {
     uint32_t       data_length;
     uint16_t       width;
     uint16_t       height;
-    uint16_t       scale_x;
-    uint16_t       scale_y;
     uint16_t       bar_color;
     uint16_t       bg_color;
 } barcode_t;
