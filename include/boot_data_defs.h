@@ -42,6 +42,6 @@ typedef struct {
     barcode_t        app_update_url;
 } boot_data_t;
 
-_Static_assert(sizeof(boot_data_t) == 68, "boot_data_t size mismatch");
+_Static_assert(sizeof(boot_data_t) == 64, "boot_data_t size mismatch");
 
 #define G_BOOT_DATA ((const volatile boot_data_t*)(FLASH_BASE + BOOTLOADER_SIZE - BOOTLOADER_DATA_SIZE))
